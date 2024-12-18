@@ -1,5 +1,5 @@
 body{
-    background-color: #000;
+    background-color: #000 !important;
 }
 
 h1{
@@ -7,4 +7,23 @@ h1{
 }
 li{
     color: #ddd !important;
+    list-style: none;
 } 
+.posts-list-list {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #121212;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: #252525;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
