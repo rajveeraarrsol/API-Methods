@@ -39,9 +39,9 @@
       <!-- Display Error Messages -->
       <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
 
-      <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <!-- Modal --> 
+
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -130,12 +130,13 @@ export default {
       this.errorMessage = '';
       try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-          method: 'POST',
+          method: 'POST', 
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(this.newPost),
         });
         if (!response.ok) throw new Error('Failed to create post');
         const data = await response.json();
+        this.newPostId = data.id;
         this.posts.push(data);
         // Reset the form
         this.newPost.title = '';
